@@ -7,7 +7,6 @@ class Person:
     def introduce(self):
         print(f"Hello, my name is {self.name}, i was born in {self.birth_date}. I work as a {self.occupation}.\n")
 
-
 class Classmate(Person):
     def __init__(self, name, birth_date, occupation, group_name):
         super().__init__(name, birth_date, occupation)
