@@ -1,16 +1,27 @@
-class Person:
-    def __init__(self, name, birth_date, occupation, higher_education):
-        self.name = name
-        self.birth_date = birth_date
-        self.occupation = occupation
-        self.higher_education = higher_education
-    def introduce(self):
-        print(f"{self.name} was born on {self.birth_date}. \nHe/She works as a {self.occupation}. \nHe/She studies at {self.higher_education} university.\n")
+# Parent, super class
+class Car:
+    def __init__(self, color, model):
+        self.color = color
+        self.model = model
+    def drive(self, location):
+        print(f"Car {self.model} is driving in {location}")
+    def test(self):
+        self.drive("Karkol")
 
-a1 = Person(name='Elnura', birth_date="01.02", occupation="teacher", higher_education='Manas')
-a2 = Person(name='Aizhan', birth_date="10.12", occupation="waitress", higher_education='KRSU')
-a1.introduce()
-a2.introduce()
+# child class, subclass, inheritance
+class Bus(Car):
+    def __init__(self, color, model, seats):
+        super().__init__(color, model)
+        self.seats = seats
 
+    def test_bus(self):
+        super().drive(location)
+        print(f"Bus test {self.model}")
+    def drive(self, location):
+        print(f"Bus {self.model} is driving in {location}")
 
-
+bus_1 = Bus("green", "Isuzu", 30)
+print(bus_1.color)
+bus_1.drive("Bishkek")
+bus_1.test_bus()
+print(bus_1.seats)
