@@ -1,16 +1,20 @@
-# polymarphism
+# Incapsulation
 from lesson1 import car_honda
-
-
 class Car:
     def __init__(self, color, model):
         self.color = color
         self.model = model
+        self.__fined = False
     def drive(self, location):
         print(f"Car {self.model} is driving in {location}")
     def test(self):
         self.drive("Karakol")
 
+    def get_fined(self):   # when we wanna use private outside of the class
+        return self.__fined
+
+    def set_fined(self, value):
+        self.__fined = value  # when we wanna
 # child class, subclass, inheritance
 class Bus(Car):
     def __init__(self, color, model, seats):
@@ -23,19 +27,11 @@ class Bus(Car):
     def drive(self, location):
         print(f"Bus {self.model} is driving in {location}")
 
-class Truck(Car):
-    pass
-car_honda = Car("white", "Honda")
-
-bus_1 = Bus("green", "Isuzu", 30)
+bus_1 = Bus("green", "Isuzu", 40)
+print(bus_1.seats)
 print(bus_1.color)
 bus_1.drive("Bishkek")
-bus_1.test_bus()
-print(bus_1.seats)
-truck_man = Truck("red", "Man")
-
-vehicles = [car_honda, bus_1, truck_man]
-for v in vehicles:
-    v.drive(location="Karakol")
-
+# print(bus_1._fined)  # _ means protected, it is not recommended
+# bus_1._test()
+print(bus_1.get_fined)  # __ means protected, it is not true and it gives error
 
