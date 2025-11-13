@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """"Multiple Inheritance"""
 
 # class Swimm:
